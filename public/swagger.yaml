@@ -1,0 +1,31 @@
+openapi: 3.0.0
+info:
+  title: Example API
+  version: 0.0.1
+
+servers:
+  - url: http://127.0.0.1:4000/
+
+paths:
+  /ping:
+    get:
+      summary: Returns 'working'.
+      responses:
+        "200":
+          description: A string..
+          content:
+            application/json:
+              schema:
+                type: string
+  /example:
+    get:
+      summary: Returns several long strings.
+      responses:
+        "200":
+          description: An array of strings..
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
