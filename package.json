@@ -1,5 +1,5 @@
 {
-  "name": "example-express-server",
+  "name": "example-server-app",
   "version": "0.0.0",
   "private": true,
   "scripts": {
