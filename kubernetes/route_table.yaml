@@ -1,0 +1,21 @@
+apiVersion: networking.gloo.solo.io/v2
+kind: RouteTable
+metadata:
+  name: example-server-app-rt
+  namespace: apps
+spec:
+  hosts:
+    - "example-server-app.apps.svc.cluster.local"
+  http:
+    - matchers:
+        - uri:
+            prefix: /
+      forwardTo:
+        destinations:
+          - ref:
+              name: example-server-app
+              namespace: apps
+              cluster: $REMOTE_CLUSTER
+            port:
+              number: 4000
+            kind: SERVICE
