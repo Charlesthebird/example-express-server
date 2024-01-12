@@ -13,4 +13,4 @@ spec:
             prefix: /
       route:
         - destination:
-            host: reviews.prod.svc.cluster.local
+            host: example-server-app.apps.svc.cluster.local
