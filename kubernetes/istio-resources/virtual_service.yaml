@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: example-server-app-vs
+  namespace: apps
+spec:
+  hosts:
+    - "example-server-app.apps.svc.cluster.local"
+  http:
+    - name: example-server-app
+      match:
+        - uri:
+            prefix: /
+      route:
+        - destination:
+            host: reviews.prod.svc.cluster.local
